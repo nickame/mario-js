@@ -14,8 +14,15 @@ printPyramid(5);
  *      ######
  */
 function printPyramid(height) {
-    console.log("Uh oh... the pyramid is under construction.");
-    console.log("Check back soon, our developers are hard at work as we speak!");
+
+    let line = new Array(height+1);
+    line.fill(' ', 0, height);
+    line.fill('#', height-1, height+1);
+    for(let i=height-1; i>=0; i--){
+    line.fill('#', i, height); 
+     console.log(line.join(''));   
+    }
+     
 
     // TODO
     // print that pyramid!
