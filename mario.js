@@ -14,14 +14,21 @@ printPyramid(5);
  *      ######
  */
 function printPyramid(height) {
-
+    
+    let pyramid = document.getElementById('pyramid');
+    
+    
     let line = new Array(height+1);
-    line.fill(' ', 0, height);
+    line.fill('&nbsp;', 0, height);
     line.fill('#', height-1, height+1);
     for(let i=height-1; i>=0; i--){
     line.fill('#', i, height); 
-     console.log(line.join(''));   
+    let p = document.createElement('p');
+    p.innerHTML = line.join('');
+    pyramid.appendChild(p);
+    //console.log(line.join(''));   
     }
+    pyramid.removeChild(document.getElementById('construction'));
      
 
     // TODO
