@@ -1,5 +1,5 @@
 
-printPyramid(5);
+printPyramid(10);
 
 
 /*
@@ -19,10 +19,10 @@ function printPyramid(height) {
     
     
     let line = new Array(height+1);
-    line.fill('&nbsp;', 0, height);
-    line.fill('#', height-1, height+1);
+    line.fill('<i>&nbsp;</i>', 0, height);
+    line.fill('<span></span>', height-1, height+1);
     for(let i=height-1; i>=0; i--){
-    line.fill('#', i, height); 
+    line.fill('<span></span>', i, height); 
     let p = document.createElement('p');
     p.innerHTML = line.join('');
     pyramid.appendChild(p);
