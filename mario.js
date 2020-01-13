@@ -14,22 +14,22 @@ printPyramid(10);
  *      ######
  */
 function printPyramid(height) {
-    
-    let pyramid = document.getElementById('pyramid');
-    
-    
+
+    let pyramid =$('#pyramid');
+
+
     let line = new Array(height+1);
     line.fill('<i>&nbsp;</i>', 0, height);
     line.fill('<span></span>', height-1, height+1);
     for(let i=height-1; i>=0; i--){
-    line.fill('<span></span>', i, height); 
-    let p = document.createElement('p');
-    p.innerHTML = line.join('');
-    pyramid.appendChild(p);
-    //console.log(line.join(''));   
+    line.fill('<span></span>', i, height);
+    let p = $("<p></p>").html(line.join(''));
+  //  p.html = line.join('');
+    pyramid.append(p);
+    //console.log(line.join(''));
     }
-    pyramid.removeChild(document.getElementById('construction'));
-     
+    pyramid.remove($('#construction'));
+
 
     // TODO
     // print that pyramid!
